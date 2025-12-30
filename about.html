@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Brimarc Global</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <header class="glass-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand-logo">
+                <span class="logo-text">Brimarc <span class="text-gradient">Global</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html" class="active">About</a>
+            </nav>
+
+            <div class="account-wrapper">
+                <button id="accountBtn" class="account-btn" aria-label="Account">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="btn-label">Account</span>
+                    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+                <div id="accountDropdown" class="account-dropdown">
+                    <a href="login.html" class="dropdown-item">Login</a>
+                    <a href="signup.html" class="dropdown-item accent">Sign Up</a>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-nav-overlay">
+            <nav class="mobile-nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html" class="accent">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Hero -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="hero-badge">Our Mission</div>
+                <h1 class="hero-title">Architects of the <br><span class="text-gradient">Impossible</span></h1>
+                <p class="hero-subtitle">We are a collective of engineers, designers, and visionaries dedicated to
+                    pushing the boundaries of what technologies can achieve.</p>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <section class="container about-grid">
+            <div class="about-text">
+                <h2 class="section-title">The <span class="text-gradient">Vision</span></h2>
+                <p>Founded in 2024, Brimarc Global emerged from a simple idea: that utility and aesthetics should not be
+                    mutually exclusive.</p>
+                <p>We build digital ecosystems that are not only robust and scalable but also immersive and intuitive.
+                    Our proprietary "Liquid Glass" interface technology sets a new standard for web interactivity.</p>
+            </div>
+            <div class="about-image">
+                <!-- Placeholder for a team or office image -->
+                <div class="product-image-container">
+                    <img src="assets/team_workspace.png" alt="Our Vision">
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="container" style="margin-bottom: 100px;">
+            <h2 class="section-title" style="text-align: center;">The <span class="text-gradient">Core Team</span></h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">DM</div>
+                    <h3>DirectorM</h3>
+                    <div class="team-role">Lead Architect</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">SJ</div>
+                    <h3>Sarah Jenkins</h3>
+                    <div class="team-role">AI Specialist</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">DO</div>
+                    <h3>David Okon</h3>
+                    <div class="team-role">UX Director</div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">ER</div>
+                    <h3>Elena Rodriguez</h3>
+                    <div class="team-role">Product Designer</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Reusing Footer from index.html (Simplified) -->
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2024 Brimarc Global. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Academy | Brimarc Global</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        .academy-hero {
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+
+        .academy-hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .academy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .course-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: 0.4s;
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--brand-primary);
+            box-shadow: 0 20px 50px rgba(138, 43, 226, 0.15);
+        }
+
+        .course-header {
+            padding: 30px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .course-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .course-tag {
+            background: rgba(138, 43, 226, 0.1);
+            color: var(--brand-primary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .course-content {
+            padding: 30px;
+        }
+
+        .curriculum-section {
+            margin-top: 30px;
+        }
+
+        .curriculum-title {
+            font-size: 1.1rem;
+            color: var(--brand-cyan);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .module-list {
+            list-style: none;
+        }
+
+        .module-item {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-muted);
+            transition: 0.3s;
+        }
+
+        .module-item:hover {
+            background: rgba(255, 255, 255, 0.02);
+            color: white;
+            padding-left: 20px;
+        }
+
+        .module-item:last-child {
+            border-bottom: none;
+        }
+
+        .lock-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .academy-hero h1 {
+                font-size: 3rem;
+            }
+
+            .academy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/logo.png" alt="Brimarc Logo" class="logo-img">
+                <span class="logo-text">Brimarc <span class="text-gradient">Global</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#products">Products</a>
+                <a href="academy.html" class="active"
+                    style="color: white; text-shadow: 0 0 10px rgba(255,255,255,0.5);">Academy</a>
+                <a href="about.html">About</a>
+            </nav>
+
+            <div class="account-wrapper">
+                <button id="accountBtn" class="account-btn" aria-label="Account">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="btn-label">Account</span>
+                    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+                <div id="accountDropdown" class="account-dropdown">
+                    <a href="login.html" class="dropdown-item">Login</a>
+                    <a href="signup.html" class="dropdown-item accent">Sign Up</a>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-nav-overlay">
+            <nav class="mobile-nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+                <hr class="mobile-divider">
+                <a href="login.html">Login</a>
+                <a href="signup.html" class="accent">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="academy-hero">
+            <div class="container">
+                <div class="hero-badge" style="margin: 0 auto 30px;">Zero Code. Zero Limits.</div>
+                <h1>Unlock Your <br><span class="text-gradient">Potential</span></h1>
+                <p class="hero-subtitle">Master the tools of tomorrow. From AI-driven development to holographic
+                    interface design. No prior experience required.</p>
+            </div>
+        </section>
+
+        <!-- Courses Grid -->
+        <section class="container">
+            <div class="academy-grid">
+
+                <!-- Course 1 -->
+                <article class="course-card">
+                    <div class="course-header">
+                        <h2 class="course-title">Google AI <span class="text-gradient">Anti-Gravity</span></h2>
+                        <div class="course-meta">
+                            <span class="course-tag">Development</span>
+                            <span>•</span>
+                            <span>12 Modules</span>
+                            <span>•</span>
+                            <span>Beginner to Master</span>
+                        </div>
+                        <p class="text-muted">The ultimate agentic coding course. Build self-correcting software
+                            architectures without writing a single line of boilerplate.</p>
+                        <button class="btn-primary" style="width: 100%; margin-top: 20px;"
+                            onclick="attemptStartCourse('anti-gravity')">Start Learning</button>
+                    </div>
+                    <div class="course-content">
+                        <!-- Beginner -->
+                        <div class="curriculum-section">
+                            <h3 class="curriculum-title">Beginner: The Awakening</h3>
+                            <ul class="module-list">
+                                <li class="module-item">1. Understanding LLMs & Context <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                                <li class="module-item">2. Setting up the Environment <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                                <li class="module-item">3. Your First Agent <svg class="lock-icon" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                            </ul>
+                        </div>
+
+                        <!-- Intermediate -->
+                        <div class="curriculum-section">
+                            <h3 class="curriculum-title">Intermediate: Tool Use</h3>
+                            <ul class="module-list">
+                                <li class="module-item">4. Context Caching Strategies <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                                <li class="module-item">5. Multi-Agent Orchestration <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                            </ul>
+                        </div>
+
+                        <!-- Advanced -->
+                        <div class="curriculum-section">
+                            <h3 class="curriculum-title">Advanced: God Mode</h3>
+                            <ul class="module-list">
+                                <li class="module-item">6. Recursive Thinking Loops <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                                <li class="module-item">7. Building "Jarvis" <svg class="lock-icon" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Course 2 -->
+                <article class="course-card">
+                    <div class="course-header">
+                        <h2 class="course-title">Figma <span class="text-gradient">AI Design</span></h2>
+                        <div class="course-meta">
+                            <span class="course-tag">Design</span>
+                            <span>•</span>
+                            <span>10 Modules</span>
+                            <span>•</span>
+                            <span>Zero Design Exp Req</span>
+                        </div>
+                        <p class="text-muted">Designing future interfaces has never been easier. Learn to use generative
+                            AI to create stunning Liquid Glass UIs in minutes.</p>
+                        <button class="btn-primary" style="width: 100%; margin-top: 20px;"
+                            onclick="attemptStartCourse('figma-ai')">Start Learning</button>
+                    </div>
+                    <div class="course-content">
+                        <!-- Beginner -->
+                        <div class="curriculum-section">
+                            <h3 class="curriculum-title">Beginner: Fundamentals</h3>
+                            <ul class="module-list">
+                                <li class="module-item">1. Interface Basics & Auto-Layout <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                                <li class="module-item">2. AI Text-to-Image Generation <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                            </ul>
+                        </div>
+
+                        <!-- Intermediate -->
+                        <div class="curriculum-section">
+                            <h3 class="curriculum-title">Intermediate: Flows</h3>
+                            <ul class="module-list">
+                                <li class="module-item">3. Generative Fills & Patterns <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                                <li class="module-item">4. AI Prototyping Logic <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                            </ul>
+                        </div>
+
+                        <!-- Advanced -->
+                        <div class="curriculum-section">
+                            <h3 class="curriculum-title">Advanced: Systems</h3>
+                            <ul class="module-list">
+                                <li class="module-item">5. Design Systems with AI <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                                <li class="module-item">6. Automated Developer Handoffs <svg class="lock-icon"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2024 Brimarc Global. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simulation Script -->
+    <script>
+        function attemptStartCourse(courseId) {
+            // Check if user is "logged in" (For simulation, check localStorage)
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+            if (isLoggedIn === 'true') {
+                // Success
+                alert("Enrollment Successful! Accessing secure modules...");
+                // In a real app, this would redirect or unlock content
+            } else {
+                // Access Denied
+                const confirmLogin = confirm("ACCESS DENIED: You must be a registered student to view this content.\n\nWould you like to log in now?");
+                if (confirmLogin) {
+                    window.location.href = 'login.html';
+                }
+            }
+        }
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

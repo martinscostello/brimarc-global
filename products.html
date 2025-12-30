@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Brimarc Global</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        /* Responsive Padding Fix */
+        .product-showcase-section {
+            padding: 100px 24px;
+            /* Added horizontal padding for safe area */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .product-showcase-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .product-showcase-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Feature Section Style (Used for all products now) */
+        .feature-showcase {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .feature-showcase.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-image {
+            flex: 1;
+            /* Liquid Container style */
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            padding: 20px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .feature-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            display: block;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+        }
+
+        .feature-list li svg {
+            color: var(--brand-cyan);
+            min-width: 20px;
+            /* Prevent shrink on small screens */
+        }
+
+        @media (max-width: 900px) {
+
+            .feature-showcase,
+            .feature-showcase.reverse {
+                flex-direction: column;
+            }
+
+            .product-showcase-section {
+                padding: 60px 20px;
+                /* Adjust for mobile */
+            }
+
+            .feature-image {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header (Same as index) -->
+    <header class="glass-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/logo.png" alt="Brimarc Logo" class="logo-img">
+                <span class="logo-text">Brimarc <span class="text-gradient">Global</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="#" class="active">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+            </nav>
+
+            <div class="account-wrapper">
+                <button id="accountBtn" class="account-btn" aria-label="Account">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="btn-label">Account</span>
+                    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+                <div id="accountDropdown" class="account-dropdown">
+                    <a href="login.html" class="dropdown-item">Login</a>
+                    <a href="signup.html" class="dropdown-item accent">Sign Up</a>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-nav-overlay">
+            <nav class="mobile-nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+                <hr class="mobile-divider">
+                <a href="login.html">Login</a>
+                <a href="signup.html" class="accent">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="about-hero" style="padding-bottom: 50px;">
+            <div class="container">
+                <div class="hero-badge">Our Suite</div>
+                <h1 class="hero-title">Digital <span class="text-gradient">Innovations</span></h1>
+                <p class="hero-subtitle">Explore our ecosystem of advanced applications designed to optimize your life
+                    and business.</p>
+            </div>
+        </section>
+
+        <!-- Product 1: Daily Profit (Single Layout) -->
+        <section id="daily-profit" class="container product-showcase-section">
+            <div class="feature-showcase reverse">
+                <div class="feature-content">
+                    <h2>Daily <span class="text-gradient">Profit</span></h2>
+                    <p class="text-muted">The ultimate profit tracking application for businesses. Track daily, weekly,
+                        and monthly income, manage expenses, and gain valuable tax insights.</p>
+                    <ul class="feature-list">
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Real-time Income Tracking</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Expense Management</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Automated Tax Estimates</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="assets/daily_profit_mockup.png" alt="Daily Profit Interface">
+                </div>
+            </div>
+        </section>
+
+        <!-- Product 2: AI Calculator -->
+        <section id="ai-calculator" class="container product-showcase-section">
+            <div class="feature-showcase">
+                <div class="feature-content">
+                    <h2>AI Glass <span class="text-gradient">Calculator</span></h2>
+                    <p class="text-muted">A state-of-the-art calculator featuring a stunning liquid glass UI/UX.
+                        Integrated with an advanced AI solver to handle even the most complex mathematical problems in
+                        seconds.</p>
+                    <ul class="feature-list">
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Natural Language Problem Solving</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Holographic Result Visualizations</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Voice-Activated Commands</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="assets/ai_calculator_ui.png" alt="AI Glass Calculator UI">
+                </div>
+            </div>
+        </section>
+
+        <!-- Product 3: Clotheline (Laundry App) -->
+        <section id="clotheline" class="container product-showcase-section" style="border-bottom: none;">
+            <div class="feature-showcase reverse">
+                <div class="feature-content">
+                    <h2>Clotheline <span class="text-gradient">App</span></h2>
+                    <p class="text-muted">The #1 digitalized laundry service in Nigeria. Taking the laundry space by
+                        storm with seamless pickup scheduling, real-time wash status tracking, and premium care.</p>
+                    <ul class="feature-list">
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Instant Pickup Scheduling</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Real-time Order Tracking</li>
+                        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg> Contactless Payments</li>
+                    </ul>
+                </div>
+                <div class="feature-image">
+                    <img src="assets/clotheline_real_ui.png" alt="Clotheline App UI">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2024 Brimarc Global. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

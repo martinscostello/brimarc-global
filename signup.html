@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Brimarc Global</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <header class="glass-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/logo.png" alt="Brimarc Logo" class="logo-img">
+                <span class="logo-text">Brimarc <span class="text-gradient">Global</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#products">Products</a>
+                <a href="about.html">About</a>
+            </nav>
+
+            <div class="account-wrapper">
+                <a href="login.html" class="account-btn" aria-label="Login">
+                    <span class="btn-label">Login</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-nav-overlay">
+            <nav class="mobile-nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html" class="accent">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-section">
+        <div class="LiquidglassContainer">
+            <div class="auth-header">
+                <h2>Join the Network</h2>
+                <p class="text-muted">Create your identity to access advanced tools.</p>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-input" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-input" placeholder="name@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary auth-btn">Create Account</button>
+            </form>
+            <div class="auth-footer">
+                Already have an account? <a href="login.html" class="auth-link">Login</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
