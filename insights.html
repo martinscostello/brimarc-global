@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Brimarc Global</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <header class="glass-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand-logo">
+                <span class="logo-text">Brimarc <span class="text-gradient">Global</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html" class="active">About</a>
+            </nav>
+
+            <div class="account-wrapper">
+                <button id="accountBtn" class="account-btn" aria-label="Account">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="btn-label">Account</span>
+                    <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+                <div id="accountDropdown" class="account-dropdown">
+                    <a href="login.html" class="dropdown-item">Login</a>
+                    <a href="signup.html" class="dropdown-item accent">Sign Up</a>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-nav-overlay">
+            <nav class="mobile-nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html" class="accent">Sign Up</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero -->
+        <section class="about-hero" id="pageHeroSection" style="display:none;">
+            <div class="container">
+                <div class="hero-badge" id="pageHeroBadge">Page</div>
+                <h1 class="hero-title" id="pageHeroTitle"></h1>
+                <p class="hero-subtitle" id="pageHeroSubtitle"></p>
+            </div>
+        </section>
+
+        <!-- Dynamic Content Grid -->
+        <section class="container about-grid" id="pageContentSection"
+            style="margin-top: 50px; min-height: 400px; display:none;">
+            <div class="about-text" id="pageContentRender" style="width: 100%; max-width: 800px; margin: 0 auto;">
+                <!-- Content injected here -->
+                <p style="text-align:center; color: #666;">Loading page content...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Reusing Footer from index.html (Simplified) -->
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2024 Brimarc Global. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
