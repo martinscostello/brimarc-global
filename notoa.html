@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notoa | Capture Thoughts Instantly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        .product-detail-hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            text-align: center;
+        }
+
+        .product-hero-img {
+            max-width: 800px;
+            width: 90%;
+            border-radius: 20px;
+            margin: 40px auto;
+            display: block;
+            box-shadow: 0 20px 60px rgba(138, 43, 226, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-grid-detailed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 80px 0;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-card li {
+            list-style: disc;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 60px 0;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            border-color: var(--brand-cyan);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        .download-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin: 60px 0;
+            border: 1px solid var(--glass-border);
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .legal-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .legal-footer-links a {
+            color: var(--text-muted);
+        }
+
+        .legal-footer-links a:hover {
+            color: var(--brand-cyan);
+        }
+
+        @media (max-width: 768px) {
+            .product-detail-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .feature-grid-detailed {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand-logo">
+                <span class="logo-text">Brimarc <span class="text-gradient">Global</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+            </nav>
+
+            <div class="account-wrapper">
+                <a href="products.html" class="account-btn" aria-label="Back">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    <span class="btn-label">Back to Products</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-nav-overlay">
+            <nav class="mobile-nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="product-detail-hero">
+                <div class="hero-badge">Productivity & Focus</div>
+                <h1 class="hero-title"><span class="text-gradient">Notoa</span></h1>
+                <p class="hero-subtitle">Capture thoughts instantly from your menu bar. Notoa stays out of your way so
+                    you can write, drop images, dictate, and move on.</p>
+                <img src="assets/notoa_mockup.png" alt="Notoa App Main" class="product-hero-img">
+            </div>
+
+            <!-- Intro Section -->
+            <div class="feature-showcase">
+                <div class="feature-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2>📝 What is <span class="text-gradient">Notoa?</span></h2>
+                    <p class="text-muted">Notoa is a lightweight macOS menu bar app designed for capturing thoughts
+                        instantly—without opening windows or breaking focus.</p>
+                    <p class="text-muted">Always available from the menu bar, Notoa lets you write notes, dictate text,
+                        paste images, manage simple tasks, and search your notes in seconds. The interface stays calm
+                        and unobtrusive, so you can capture ideas quickly and return to what you were doing.</p>
+                    <p class="text-muted">All notes are stored locally on your Mac for speed and privacy. Notoa launches
+                        at login, disappears when you’re done, and never gets in the way.</p>
+                    <p style="margin-top: 20px; font-weight: 600; font-style: italic;">Notoa is built for moments when
+                        you just need a place to drop a thought—quickly and quietly.</p>
+                </div>
+            </div>
+
+            <!-- Key Features Grid -->
+            <h2 class="section-title" style="text-align: center; margin-top: 100px;">Key <span
+                    class="text-gradient">Features</span></h2>
+            <div class="feature-grid-detailed">
+                <div class="info-card">
+                    <h3>⚡ Instant Access</h3>
+                    <ul>
+                        <li>Access from the menu bar</li>
+                        <li>Always available, never in the way</li>
+                        <li>Keyboard-first navigation</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📝 Rick Text & Images</h3>
+                    <ul>
+                        <li>Simple rich text formatting</li>
+                        <li>Paste images directly into notes</li>
+                        <li>Clean and readable typography</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎙️ Voice Dictation</h3>
+                    <ul>
+                        <li>Capture thoughts with your voice</li>
+                        <li>Fast and accurate transcription</li>
+                        <li>Hands-free note taking</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>✅ Simple Tasks</h3>
+                    <ul>
+                        <li>Manage simple task lists</li>
+                        <li>Check off items quickly</li>
+                        <li>Stay on top of your to-dos</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🔍 Fast Search</h3>
+                    <ul>
+                        <li>Find any note in seconds</li>
+                        <li>Search by content or title</li>
+                        <li>Highlight search results</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🔒 Local Privacy</h3>
+                    <ul>
+                        <li>Local-first storage</li>
+                        <li>No cloud sync required</li>
+                        <li>Your data stays on your Mac</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Gallery -->
+            <h3 class="section-title" style="text-align: center; margin-top: 100px;">App <span
+                    class="text-gradient">Interface</span></h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="assets/uploaded_image_0_1768985625647.png" alt="Notoa UI 1"></div>
+                <div class="gallery-item"><img src="assets/uploaded_image_1_1768985625647.png" alt="Notoa UI 2"></div>
+                <div class="gallery-item"><img src="assets/uploaded_image_2_1768985625647.png" alt="Notoa UI 3"></div>
+                <div class="gallery-item"><img src="assets/uploaded_image_3_1768985625647.jpg" alt="Notoa UI 4"></div>
+                <div class="gallery-item"><img src="assets/uploaded_image_4_1768985625647.jpg" alt="Notoa UI 5"></div>
+            </div>
+
+            <!-- Download -->
+            <div class="download-section">
+                <h2>Capture thoughts instantly.</h2>
+                <p class="text-muted">A calm menu bar app for capturing notes, images, and thoughts instantly.</p>
+                <div class="download-buttons">
+                    <button class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path
+                                d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z" />
+                        </svg>
+                        Mac App Store
+                    </button>
+                </div>
+
+                <div class="legal-footer-links">
+                    <a href="notoa-privacy.html">Privacy Policy</a>
+                    <a href="notoa-terms.html">Terms of Use</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 Brimarc Global. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
