@@ -4,160 +4,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Profit - Run Your Business With Clarity</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Daily Profit | Run Your Business With Clarity</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        .product-detail-hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            text-align: center;
+        }
+
+        .product-hero-img {
+            max-width: 800px;
+            width: 90%;
+            border-radius: 20px;
+            margin: 40px auto;
+            display: block;
+            box-shadow: 0 20px 60px rgba(46, 204, 113, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-grid-detailed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 80px 0;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-card li {
+            list-style: disc;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 60px 0;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            border-color: var(--brand-cyan);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+        }
+
+        .download-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin: 60px 0;
+            border: 1px solid var(--glass-border);
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .legal-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .legal-footer-links a {
+            color: var(--text-muted);
+        }
+
+        .legal-footer-links a:hover {
+            color: var(--brand-cyan);
+        }
+
+        /* Mobile Tuning */
+        @media (max-width: 768px) {
+            .product-detail-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .feature-grid-detailed {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="container header-content">
             <a href="index.html" class="brand-logo">
-                Brimarc Global
+                <span class="logo-text">Brimarc <span class="text-gradient">Global</span></span>
             </a>
-            <div class="nav-links">
+
+            <nav class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+            </nav>
+
+            <div class="account-wrapper">
+                <a href="products.html" class="account-btn" aria-label="Back">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    <span class="btn-label">Back to Products</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-nav-overlay">
+            <nav class="mobile-nav-links">
                 <a href="index.html">Home</a>
                 <a href="products.html">Products</a>
                 <a href="academy.html">Academy</a>
                 <a href="about.html">About</a>
-            </div>
-            <div class="auth-buttons">
-                <a href="login.html" class="btn-login">Log In</a>
-                <a href="signup.html" class="btn-signup">Sign Up</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="product-hero">
-        <div class="container hero-content">
-            <h1 class="hero-title">Daily <span class="text-gradient">Profit</span></h1>
-            <p class="hero-subtitle">Run Your Business With Clarity</p>
-            <p style="max-width: 600px; margin: 0 auto 40px; color: var(--text-secondary); line-height: 1.6;">
-                DailyProfit is a cloud-based business tracking app designed for small business owners who want to
-                understand their numbers without spreadsheets or accounting stress. Track sales, manage expenses, see
-                real
-                profit, and get clear tax insights — all in one simple app.
-            </p>
-            <div class="hero-image-container">
-                <img src="assets/daily_profit_mockup.png" alt="Daily Profit App Interface" class="hero-mockup">
-            </div>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container product-details">
-
-        <!-- Feature 1: Track Sales -->
-        <section class="feature-showcase glass-card">
-            <div class="feature-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 class="section-title">Track Sales & Expenses <span class="text-gradient">Effortlessly</span></h2>
-                <p>Record daily sales and business expenses in seconds. DailyProfit automatically calculates your profit
-                    so you always know how your business is performing.</p>
-                <div class="feature-list-center" style="display: inline-block; text-align: left; margin-top: 20px;">
-                    <div class="feature-item">
-                        <span class="check-icon">✓</span> Add sales and expenses anytime
-                    </div>
-                    <div class="feature-item">
-                        <span class="check-icon">✓</span> Categorize products and costs
-                    </div>
-                    <div class="feature-item">
-                        <span class="check-icon">✓</span> View daily, monthly, and custom reports
-                    </div>
-                </div>
-                <p style="margin-top: 20px; font-style: italic; color: var(--text-secondary);">No accounting knowledge
-                    required.</p>
+    <main>
+        <section class="container">
+            <div class="product-detail-hero">
+                <div class="hero-badge">Business & Finance</div>
+                <h1 class="hero-title">Daily <span class="text-gradient">Profit</span></h1>
+                <p class="hero-subtitle">Run Your Business With Clarity. Track sales, manage expenses, and see real
+                    profit in one simple app.</p>
+                <img src="assets/daily_profit_mockup.png" alt="Daily Profit App Interface" class="product-hero-img">
             </div>
-        </section>
 
-        <!-- Feature 2: Real Profit -->
-        <section class="feature-showcase glass-card">
-            <div class="feature-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 class="section-title">Know Your <span class="text-gradient">Real Profit</span></h2>
-                <p>DailyProfit shows you exactly what you make after expenses — not just how much you sell.
-                    Real-time profit calculation, clear breakdown of sales vs expenses, and easy-to-read summaries.</p>
-                <p style="margin-top: 20px; font-weight: 600;">No guessing. No confusion.</p>
-            </div>
-        </section>
-
-        <!-- Feature 3: Tax Insight -->
-        <section class="feature-showcase glass-card">
-            <div class="feature-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 class="section-title">Smart <span class="text-gradient">Tax Insight</span></h2>
-                <p class="subtitle-small">(Educational Only)</p>
-                <p>Understand your possible tax position without fear or jargon. DailyProfit provides tax estimates for
-                    guidance, based on your business type, profit, sales, and tax-exempt items.</p>
-                <p>You’ll see what is taxable, what is exempt, and why a tax applies or doesn’t. This feature helps you
-                    prepare ahead, not panic.</p>
-                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-secondary);">DailyProfit does not file
-                    taxes or replace professional advice.</p>
-            </div>
-        </section>
-
-        <!-- Feature 4: Team Collaboration -->
-        <section class="feature-showcase glass-card">
-            <div class="feature-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 class="section-title">Work With Your Team — <span class="text-gradient">Safely</span></h2>
-                <p>Invite managers, sales staff, or auditors and assign controlled access to each role. Perfect for
-                    growing businesses.</p>
-                <div class="feature-list-center" style="display: inline-block; text-align: left; margin-top: 20px;">
-                    <div class="feature-item"><span class="check-icon">✓</span> Invite team members via QR code</div>
-                    <div class="feature-item"><span class="check-icon">✓</span> Assign permissions per role</div>
-                    <div class="feature-item"><span class="check-icon">✓</span> Control access to sales/expenses</div>
-                    <div class="feature-item"><span class="check-icon">✓</span> Monitor activity for accountability
+            <!-- Intro Section -->
+            <div class="feature-showcase">
+                <div class="feature-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2>📈 Know Your <span class="text-gradient">Numbers</span></h2>
+                    <p class="text-muted">DailyProfit is a cloud-based business tracking app designed for small business
+                        owners who want to understand their numbers without spreadsheets or accounting stress.</p>
+                    <div style="margin-top: 30px;">
+                        <span class="hero-badge" style="background: rgba(46, 204, 113, 0.2); color: #2ecc71;">No Account
+                            Knowledge Required</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Feature 5: Cloud Sync -->
-        <section class="feature-showcase glass-card">
-            <div class="feature-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 class="section-title">Cloud Sync & <span class="text-gradient">Multi-Device Access</span></h2>
-                <p>Your data is securely stored in the cloud and synced across devices. Access your business from
-                    multiple phones and keep data up to date in real time. Ideal for owners and teams working together.
-                </p>
-                <p style="margin-top: 20px; font-weight: 600;">Your data stays yours.</p>
-            </div>
-        </section>
+            <!-- Key Features Grid -->
+            <h2 class="section-title" style="text-align: center; margin-top: 100px;">Key <span
+                    class="text-gradient">Features</span></h2>
+            <div class="feature-grid-detailed">
+                <div class="info-card">
+                    <h3>💸 Track Sales & Expenses</h3>
+                    <p>Record daily sales and business expenses in seconds. DailyProfit automatically calculates your
+                        profit so you always know how your business is performing.</p>
+                    <ul>
+                        <li>Add sales and expenses anytime</li>
+                        <li>Categorize products and costs</li>
+                        <li>View daily, monthly, and custom reports</li>
+                    </ul>
+                </div>
 
-        <!-- Additional Features Grid -->
-        <div class="grid-features">
-            <div class="glass-card mini-feature-card">
-                <h3>Reports & Exports</h3>
-                <p>Generate monthly summaries, custom date ranges, and export to PDF or CSV to share with your
-                    accountant.</p>
-            </div>
-            <div class="glass-card mini-feature-card">
-                <h3>Secure & Private</h3>
-                <p>Sign in with Google/Apple, encrypted cloud storage, and role_based access. No ads. No data selling.
-                </p>
-            </div>
-            <div class="glass-card mini-feature-card">
-                <h3>Flexible Subscriptions</h3>
-                <p>Start free. Upgrade for full history, tax insights, cloud sync, and team roles. Managed securely via
-                    App Store/Play Store.</p>
-            </div>
-        </div>
+                <div class="info-card">
+                    <h3>📈 Real Profit Tracking</h3>
+                    <p>DailyProfit shows you exactly what you make after expenses — not just how much you sell.</p>
+                    <ul>
+                        <li>Real-time profit calculation</li>
+                        <li>Clear breakdown of sales vs expenses</li>
+                        <li>Easy-to-read summaries</li>
+                    </ul>
+                </div>
 
-        <!-- Why Users Love Section -->
-        <section class="feature-showcase glass-card" style="margin-top: 40px;">
-            <div class="feature-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 class="section-title">WHY USERS LOVE <span class="text-gradient">DAILYPROFIT</span></h2>
-                <div class="feature-list-center" style="display: inline-block; text-align: left; margin-top: 20px;">
-                    <div class="feature-item"><span class="check-icon">★</span> Simple and easy to use</div>
-                    <div class="feature-item"><span class="check-icon">★</span> Clear explanations, no jargon</div>
-                    <div class="feature-item"><span class="check-icon">★</span> Helps avoid financial surprises</div>
-                    <div class="feature-item"><span class="check-icon">★</span> Works for solo owners and teams</div>
-                    <div class="feature-item"><span class="check-icon">★</span> Designed for growing businesses</div>
+                <div class="info-card">
+                    <h3>🧾 Smart Tax Insight</h3>
+                    <p>Understand your possible tax position without fear or jargon. (Educational Only)</p>
+                    <ul>
+                        <li>Tax estimates based on business type</li>
+                        <li>See what is taxable and what is exempt</li>
+                        <li>Prepare ahead, don't panic</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>👥 Team Collaboration</h3>
+                    <p>Invite managers, sales staff, or auditors and assign controlled access to each role.</p>
+                    <ul>
+                        <li>Invite via QR code</li>
+                        <li>Assign permissions per role</li>
+                        <li>Control access to sales/expenses</li>
+                        <li>Monitor activity</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>☁️ Cloud & Multi-Device</h3>
+                    <p>Your data is securely stored in the cloud and synced across devices.</p>
+                    <ul>
+                        <li>Access from multiple phones</li>
+                        <li>Real-time data sync</li>
+                        <li>Secure cloud storage</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📄 Reports & Exports</h3>
+                    <p>Generate business reports when you need them.</p>
+                    <ul>
+                        <li>Monthly summaries</li>
+                        <li>Custom date ranges</li>
+                        <li>Export to PDF or CSV</li>
+                        <li>Share with accountants easily</li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
+            <!-- Why Users Love Section -->
+            <div class="feature-showcase">
+                <div class="feature-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h3>⭐ Why Users Love DailyProfit</h3>
+                    <ul class="feature-list" style="display: inline-block; text-align: left; margin-top: 20px;">
+                        <li>Simple and easy to use</li>
+                        <li>Clear explanations, no jargon</li>
+                        <li>Helps avoid financial surprises</li>
+                        <li>Works for solo owners and teams</li>
+                    </ul>
+                </div>
+            </div>
 
-        <!-- Gallery -->
-        <section class="app-gallery">
+            <!-- Gallery -->
             <h3 class="section-title" style="text-align: center; margin-top: 100px;">App <span
                     class="text-gradient">Interface</span></h3>
             <div class="gallery-grid">
@@ -170,27 +285,30 @@
 
             <!-- Download -->
             <div class="download-section">
-                <h3>Start Tracking Today</h3>
+                <h2>Start Tracking Today</h2>
+                <p class="text-muted">Join thousands of business owners who trust DailyProfit.</p>
                 <div class="download-buttons">
                     <a href="#" class="store-btn">App Store</a>
                     <a href="#" class="store-btn">Google Play</a>
                 </div>
-                <div class="legal-links" style="margin-top: 30px;">
-                    <a href="dailyprofit-privacy.html" class="legal-link">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="dailyprofit-terms.html" class="legal-link">Terms of Use</a>
+
+                <div class="legal-footer-links">
+                    <a href="dailyprofit-privacy.html">Privacy Policy</a>
+                    <a href="dailyprofit-terms.html">Terms of Use</a>
                 </div>
             </div>
-        </section>
 
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="container footer-content">
+        <div class="container footer-content" style="text-align: center; padding-bottom: 40px;">
             <p>&copy; 2026 Brimarc Global. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
