@@ -71,23 +71,42 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="container header-content">
             <a href="index.html" class="brand-logo">
-                Brimarc Global
+                <span class="logo-text">Brimarc <span class="text-gradient">Global</span></span>
             </a>
-            <div class="nav-links">
+
+            <nav class="nav-links">
+                <a href="index.html#services">Services</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+            </nav>
+
+            <div class="auth-buttons" style="display: flex; gap: 15px;">
+                <a href="login.html" class="btn-login"
+                    style="padding: 8px 16px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;">Log In</a>
+                <a href="signup.html" class="btn-signup"
+                    style="padding: 8px 16px; background: var(--brand-primary); border-radius: 8px;">Sign Up</a>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-nav-overlay">
+            <nav class="mobile-nav-links">
                 <a href="index.html">Home</a>
                 <a href="products.html">Products</a>
                 <a href="academy.html">Academy</a>
                 <a href="about.html">About</a>
-            </div>
-            <div class="auth-buttons">
-                <a href="login.html" class="btn-login">Log In</a>
-                <a href="signup.html" class="btn-signup">Sign Up</a>
-            </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <div class="container">
         <div class="glass-card legal-content">
