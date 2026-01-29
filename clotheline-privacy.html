@@ -38,6 +38,29 @@
             padding-left: 20px;
             list-style: disc;
         }
+
+        .warning-card {
+            background: rgba(255, 59, 48, 0.1);
+            border: 1px solid rgba(255, 59, 48, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 40px;
+        }
+
+        .warning-card h2 {
+            color: #ff453a;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-card p {
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.6;
+        }
     </style>
 </head>
 
@@ -128,6 +151,13 @@
 
                 <h2>5. Contact Us</h2>
                 <p>If you have questions about this privacy policy, please contact us at support@brimarcglobal.com.</p>
+
+                <div class="warning-card">
+                    <h2>⚠️ Data Deletion Request</h2>
+                    <p>To request deletion of your account and all associated data, please contact us at <a
+                            href="mailto:support@brimarcglobal.com?subject=Clotheline%20Account%20Deletion%20Request"
+                            style="color: inherit; text-decoration: underline;">support@brimarcglobal.com</a>.</p>
+                </div>
             </div>
         </section>
     </main>
