@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clotheline | Brimarc Global</title>
+    <title>Clotheline | Laundry & Cleaning Services</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <style>
@@ -22,6 +22,38 @@
             display: block;
             box-shadow: 0 20px 60px rgba(138, 43, 226, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-grid-detailed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 80px 0;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-card li {
+            list-style: disc;
+            color: var(--text-muted);
+            margin-bottom: 8px;
         }
 
         .gallery-grid {
@@ -65,21 +97,32 @@
             flex-wrap: wrap;
         }
 
-        .legal-section {
-            margin-top: 80px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 60px;
+        .legal-footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
         }
 
-        .legal-header {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .legal-content {
+        .legal-footer-links a {
             color: var(--text-muted);
-            line-height: 1.8;
-            font-size: 0.95rem;
+        }
+
+        .legal-footer-links a:hover {
+            color: var(--brand-cyan);
+        }
+
+        /* Mobile Tuning */
+        @media (max-width: 768px) {
+            .product-detail-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .feature-grid-detailed {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -128,19 +171,26 @@
     <main>
         <section class="container">
             <div class="product-detail-hero">
-                <div class="hero-badge">Lifestyle</div>
-                <h1 class="hero-title">Clotheline <span class="text-gradient">App</span></h1>
-                <p class="hero-subtitle">Premium laundry care delivered to your doorstep. Schedule, track, and relax
-                    while we handle the rest.</p>
-                <img src="assets/clotheline_real_ui.png" alt="Clotheline App Main" class="product-hero-img">
+                <div class="hero-badge">Lifestyle & Services</div>
+                <h1 class="hero-title"><span class="text-gradient">Clotheline</span></h1>
+                <p class="hero-subtitle">Your all-in-one solution for laundry services, professional cleaning, and
+                    everyday shopping — designed to be simple, fast, and reliable.</p>
+                <img src="assets/clotheline_mockup.png" alt="Clotheline App Mockup" class="product-hero-img">
             </div>
 
             <!-- Intro Section -->
             <div class="feature-showcase">
                 <div class="feature-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <h2>Laundry day <span class="text-gradient">Done</span></h2>
-                    <p class="text-muted">Connect with top-rated dry cleaners and laundry services in your area.
-                        Real-time updates mean you never have to guess when your clothes will be ready.</p>
+                    <h2>🧺 What is <span class="text-gradient">Clotheline?</span></h2>
+                    <p class="text-muted">With Clotheline, you can schedule laundry services, order cleaning, shop
+                        curated products, and track everything from one app.</p>
+                    <p class="text-muted">It helps you:</p>
+                    <ul class="feature-list" style="display: inline-block; text-align: left; margin-top: 20px;">
+                        <li>Schedule laundry services seamlessly</li>
+                        <li>Order professional cleaning</li>
+                        <li>Shop for curated everyday products</li>
+                        <li>Track orders in real-time</li>
+                    </ul>
                 </div>
             </div>
 
@@ -149,58 +199,91 @@
                     class="text-gradient">Features</span></h2>
             <div class="feature-grid-detailed">
                 <div class="info-card">
-                    <h3>🗓️ Instant Scheduling</h3>
-                    <p>Book a pickup in seconds. Choose a time slot that fits your busy schedule.</p>
+                    <h3>🧺 Laundry & Cleaning</h3>
+                    <p>Access professional laundry and cleaning services at your fingertips.</p>
                     <ul>
-                        <li>Flexible time slots</li>
-                        <li>Recurring pickup options</li>
-                        <li>Easy rescheduling</li>
+                        <li>Wash & Fold</li>
+                        <li>Dry Cleaning</li>
+                        <li>Home Cleaning</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
-                    <h3>📍 GPS Tracking</h3>
-                    <p>Watch your driver in real-time as they approach for pickup or delivery.</p>
+                    <h3>📦 Easy Order Tracking</h3>
+                    <p>Always know where your items are.</p>
                     <ul>
-                        <li>Live map view</li>
-                        <li>Driver ETA updates</li>
-                        <li>Contact driver directly</li>
+                        <li>Real-time status updates</li>
+                        <li>Driver tracking</li>
+                        <li>Delivery notifications</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
                     <h3>💳 Secure Payments</h3>
-                    <p>Pay safely through the app. No cash handling required.</p>
+                    <p>Pay quickly and securely within the app.</p>
                     <ul>
-                        <li>Multiple card support</li>
-                        <li>Digital receipts</li>
+                        <li>Multiple payment options</li>
+                        <li>Encrypted transactions</li>
                         <li>Transparent pricing</li>
                     </ul>
                 </div>
 
                 <div class="info-card">
-                    <h3>✨ Quality Assurance</h3>
-                    <p>We only partner with top-rated local laundromats and dry cleaners.</p>
+                    <h3>🛒 Store & Checkout</h3>
+                    <p>Shop for essentials and home care products directly.</p>
                     <ul>
-                        <li>Vetted partners</li>
-                        <li>Quality checks</li>
-                        <li>Feedback system</li>
+                        <li>Curated product selection</li>
+                        <li>Seamless checkout process</li>
+                        <li>Fast delivery</li>
                     </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🔔 Real-Time Notifications</h3>
+                    <p>Stay informed every step of the way.</p>
+                    <ul>
+                        <li>Order confirmations</li>
+                        <li>Pickup alerts</li>
+                        <li>Delivery completion</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📍 Branch Availability</h3>
+                    <p>Service that adapts to your location.</p>
+                    <ul>
+                        <li>Find nearby branches</li>
+                        <li>Check local service availability</li>
+                        <li>Location-based scheduling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Why Clotheline Section -->
+            <div class="feature-showcase">
+                <div class="feature-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h3>✨ Why Clotheline?</h3>
+                    <p class="text-muted">We focus on convenience, transparency, and reliability — making sure you
+                        always know the status of your order and get quality service every time.</p>
+                    <p style="margin-top: 20px; font-weight: 600; font-style: italic;">Clotheline is constantly
+                        evolving, with new features and improvements added regularly.</p>
                 </div>
             </div>
 
             <!-- Gallery -->
             <h3 class="section-title" style="text-align: center; margin-top: 100px;">App <span
-                    class="text-gradient">Screens</span></h3>
+                    class="text-gradient">Interface</span></h3>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="assets/clotheline_real_ui.png" alt="App UI 1"></div>
-                <div class="gallery-item"><img src="assets/laundry_app_ui.png" alt="App UI 2"></div>
+                <div class="gallery-item"><img src="assets/clotheline_screen_1.png" alt="Clotheline UI 1"></div>
+                <div class="gallery-item"><img src="assets/clotheline_screen_2.png" alt="Clotheline UI 2"></div>
+                <div class="gallery-item"><img src="assets/clotheline_screen_3.png" alt="Clotheline UI 3"></div>
+                <div class="gallery-item"><img src="assets/clotheline_screen_4.png" alt="Clotheline UI 4"></div>
             </div>
 
             <!-- Download -->
             <div class="download-section">
-                <h2>Fresh clothes, zero stress.</h2>
-                <p class="text-muted">Join thousands of happy customers in Nigeria.</p>
+                <h2>Experience Clotheline Today</h2>
+                <p class="text-muted">Simple, Fast, and Reliable.</p>
                 <div class="download-buttons">
                     <button class="btn-primary">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
