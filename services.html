@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Brimarc Global</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        .services-hero {
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+
+        .services-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .service-detail-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .service-detail-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-icon-large {
+            flex: 0 0 120px;
+            height: 120px;
+            background: rgba(138, 43, 226, 0.1);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-primary);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.2);
+        }
+
+        .service-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-info p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-form-section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 40px;
+            padding: 80px 40px;
+            max-width: 800px;
+            margin: 0 auto 100px;
+            text-align: center;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        .contact-form .full-width {
+            grid-column: span 2;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px;
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--brand-cyan);
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+
+        @media (max-width: 900px) {
+
+            .service-detail-card,
+            .service-detail-card:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px;
+            }
+
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <header class="glass-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand-logo">
+                <span class="logo-text">Brimarc <span class="text-gradient">Global</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="services.html" class="active">Services</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+            </nav>
+            <div class="account-wrapper">
+                <a href="signup.html" class="account-btn">
+                    <span class="btn-label">Get Started</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="services-hero">
+            <div class="hero-badge">Our Expertise</div>
+            <h1 class="hero-title">Cutting-Edge <span class="text-gradient">Solutions</span></h1>
+            <p class="hero-subtitle">We pride ourselves on delivering robust, scalable, and innovative projects in
+                record time. By bridging imagination with execution and utilizing our newly adopted, state-of-the-art AI
+                integration tools, we transform complex ideas into digital reality faster than ever before.</p>
+        </section>
+
+        <section class="services-detail-grid">
+            <!-- Web Development -->
+            <div class="service-detail-card" id="web-dev">
+                <div class="service-icon-large">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="service-info">
+                    <h2>Web Development</h2>
+                    <p>We build immersive, high-performance web ecosystems that redefine how users interact with your
+                        brand. From enterprise architectures to creative digital experiences, our websites are
+                        engineered for speed, security, and impact. Leveraging cutting-edge AI-assisted development, we
+                        cut delivery times in half without compromising on quality or craftsmanship.</p>
+                    <a href="#contact-form" class="btn-primary">Learn More</a>
+                </div>
+            </div>
+
+            <!-- AI Business Integration -->
+            <div class="service-detail-card" id="ai-integration">
+                <div class="service-icon-large">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                        </path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <div class="service-info">
+                    <h2>AI Business Integration</h2>
+                    <p>Infuse intelligence into your core operations. We specialize in weaving autonomous agents,
+                        predictive analytics, and generative workflows into your existing business logic. Our AI
+                        integration strategy focuses on efficiency and ROI, automating repetitive tasks and providing
+                        deep data insights that allow your team to focus on high-level strategy and growth.</p>
+                    <a href="#contact-form" class="btn-primary">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Mobile App Development -->
+            <div class="service-detail-card" id="mobile-dev">
+                <div class="service-icon-large">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                </div>
+                <div class="service-info">
+                    <h2>Mobile App Development</h2>
+                    <p>Deliver powerful experiences directly into your users' pockets. We create native-grade mobile
+                        applications with fluid interfaces and tactile responsiveness. Whether it's iOS, Android, or
+                        cross-platform solutions, we ensure your app performs with precision. Our streamlined mobile
+                        development pipeline, enhanced by modern AI tools, allows us to launch robust applications at
+                        unprecedented speeds.</p>
+                    <a href="#contact-form" class="btn-primary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section" id="contact-form">
+            <h2 class="section-title">Start Your <span class="text-gradient">Project</span></h2>
+            <p class="text-muted">Tell us about your vision, and we'll show you how we can deliver it in record time.
+            </p>
+
+            <form action="mailto:support@brimarcglobal.com" method="post" enctype="text/plain" class="contact-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" class="form-input" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" class="form-input" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group full-width">
+                    <label>Service Interested In</label>
+                    <select name="service" class="form-input">
+                        <option value="Web Development">Web Development</option>
+                        <option value="AI Business Integration">AI Business Integration</option>
+                        <option value="Mobile App Development">Mobile App Development</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label>Project Details</label>
+                    <textarea name="message" class="form-textarea"
+                        placeholder="Describe your project, goals, and timeline..." required></textarea>
+                </div>
+                <div class="full-width">
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send
+                        Message</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 Brimarc Global. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -173,4 +173,46 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // Product Slider Logic
+    const sliderTextItems = document.querySelectorAll('.product-text-item');
+    const sliderImageCards = document.querySelectorAll('.product-image-card');
+    const sliderDots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+    let sliderInterval;
+
+    function showSlide(index) {
+        sliderTextItems.forEach(item => item.classList.remove('active'));
+        sliderImageCards.forEach(card => card.classList.remove('active'));
+        sliderDots.forEach(dot => dot.classList.remove('active'));
+
+        sliderTextItems[index].classList.add('active');
+        sliderImageCards[index].classList.add('active');
+        sliderDots[index].classList.add('active');
+        currentSlide = index;
+    }
+
+    function nextSlide() {
+        let next = (currentSlide + 1) % sliderTextItems.length;
+        showSlide(next);
+    }
+
+    function startSlider() {
+        stopSlider();
+        sliderInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopSlider() {
+        clearInterval(sliderInterval);
+    }
+
+    if (sliderDots.length > 0) {
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                startSlider(); // Reset interval on click
+            });
+        });
+
+        startSlider();
+    }
 });
