@@ -1188,7 +1188,29 @@ footer {
     }
 
     .service-card h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .services-section .section-title {
+        font-size: 2rem;
+    }
+
+    .services-grid {
+        padding: 0 10px;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 24px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     /* Product Page Specifics */
@@ -1327,20 +1349,49 @@ footer {
     .product-slider-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 40px;
-        min-height: 700px;
+        gap: 20px;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
     }
 
     .slider-text-wrapper {
-        min-height: 300px;
+        min-height: 250px;
+        order: 1;
+        z-index: 10;
+        position: relative;
+    }
+
+    .slider-image-wrapper {
+        order: 2;
+        height: 220px;
+        max-width: 280px;
+        margin: 0 auto;
+        z-index: 1;
+        perspective: 1000px;
     }
 
     .product-text-item {
-        transform: translateY(0) translateX(50px);
+        transform: translateX(30px);
         top: 0;
+        width: 100%;
+    }
+
+    .product-text-item h2 {
+        font-size: 2rem;
+    }
+
+    .product-text-item p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
     }
 
     .product-text-item.active {
-        transform: translateY(0) translateX(0);
+        transform: translateX(0);
+        position: absolute;
+    }
+
+    .product-image-card img {
+        border-radius: 16px;
     }
 }
