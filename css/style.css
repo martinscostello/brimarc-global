@@ -800,13 +800,19 @@ footer {
     }
 }
 
+/* Default state for desktop */
+.mobile-menu-btn,
+.mobile-nav-overlay {
+    display: none;
+}
+
 /* Header Responsiveness & Mobile Menu */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
 
-    .account-btn .btn-label {
+    .account-wrapper {
         display: none;
     }
 
@@ -895,6 +901,16 @@ footer {
         transform: scale(1.1);
     }
 
+    .mobile-nav-links .btn-primary {
+        text-transform: none;
+        letter-spacing: normal;
+        font-size: 1.1rem;
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+
+
     .mobile-divider {
         width: 50px;
         height: 2px;
@@ -904,11 +920,7 @@ footer {
     }
 }
 
-/* Default state for desktop */
-.mobile-menu-btn,
-.mobile-nav-overlay {
-    display: none;
-}
+
 
 /* =========================================
    AUTHENTICATION PAGES (Login / Sign Up)
