@@ -1362,10 +1362,10 @@ footer {
         /* Image first */
         height: 180px;
         /* Reduced further for compactness */
+        width: 100%;
         max-width: 250px;
         margin: 0 auto 10px;
         z-index: 1;
-        perspective: 1000px;
     }
 
     .slider-text-wrapper {
