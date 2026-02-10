@@ -100,6 +100,12 @@
             <div class="hero-badge">Available Now</div>
             <h1 class="hero-title">Experience <span class="text-gradient">Clotheline</span></h1>
             <p class="hero-subtitle">Download the premium laundry and cleaning companion for your mobile device.</p>
+
+            <!-- Redirect Status Message -->
+            <div id="redirect-status"
+                style="margin-top: 20px; font-weight: 500; color: var(--brand-cyan); min-height: 1.5em; opacity: 0; transition: opacity 0.3s;">
+                Preparing your download...
+            </div>
         </section>
 
         <div class="download-options">
@@ -143,6 +149,40 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const statusEl = document.getElementById('redirect-status');
+
+            const iosLink = "https://apps.apple.com/ng/app/clotheline/id6758163937";
+            const androidLink = "https://play.google.com/store/apps/details?id=com.brimarcglobal.clotheline.secure";
+
+            let redirectUrl = null;
+            let platformName = "";
+
+            // Detect iOS
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                redirectUrl = iosLink;
+                platformName = "the App Store";
+            }
+            // Detect Android
+            else if (/android/i.test(userAgent)) {
+                redirectUrl = androidLink;
+                platformName = "Google Play";
+            }
+
+            if (redirectUrl) {
+                // Show status message
+                statusEl.textContent = `Redirecting you to ${platformName}...`;
+                statusEl.style.opacity = "1";
+
+                // Perform redirect after 700ms delay
+                setTimeout(() => {
+                    window.location.href = redirectUrl;
+                }, 700);
+            }
+        });
+    </script>
 </body>
 
 </html>
