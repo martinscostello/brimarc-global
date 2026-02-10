@@ -1349,49 +1349,77 @@ footer {
     .product-slider-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 20px;
+        gap: 15px;
+        /* Tighter gap */
         min-height: auto;
         display: flex;
         flex-direction: column;
-    }
-
-    .slider-text-wrapper {
-        min-height: 250px;
-        order: 1;
-        z-index: 10;
-        position: relative;
+        align-items: center;
     }
 
     .slider-image-wrapper {
-        order: 2;
-        height: 220px;
-        max-width: 280px;
-        margin: 0 auto;
+        order: 1;
+        /* Image first */
+        height: 180px;
+        /* Reduced further for compactness */
+        max-width: 250px;
+        margin: 0 auto 10px;
         z-index: 1;
         perspective: 1000px;
+    }
+
+    .slider-text-wrapper {
+        order: 2;
+        /* Text below image */
+        min-height: 220px;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
     }
 
     .product-text-item {
         transform: translateX(30px);
         top: 0;
         width: 100%;
+        position: absolute;
     }
 
     .product-text-item h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        /* Scaled down */
+        margin-bottom: 10px;
     }
 
     .product-text-item p {
-        font-size: 0.95rem;
-        margin-bottom: 15px;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        line-height: 1.4;
     }
 
     .product-text-item.active {
         transform: translateX(0);
+        position: relative;
+        /* Allow flow to take up space */
+        opacity: 1;
+    }
+
+    /* Keep absolute for animation layer but handle active state flow */
+    .product-text-item:not(.active) {
         position: absolute;
+        pointer-events: none;
     }
 
     .product-image-card img {
-        border-radius: 16px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .slider-controls {
+        margin-top: 20px;
+        /* Space between text and dots */
     }
 }
