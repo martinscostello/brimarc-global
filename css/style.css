@@ -178,12 +178,12 @@ ul {
     /* Hidden in favor of image */
 }
 
-.logo-img {
-    height: 40px;
-    width: 40px;
+.brand-logo-img {
+    height: 32px;
+    /* Matches roughly the height of the text */
+    width: auto;
     object-fit: contain;
-    margin-right: 12px;
-    filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.5));
+    filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.4));
 }
 
 .logo-text {
@@ -818,6 +818,15 @@ footer {
 
     .header-content {
         padding: 0 20px;
+    }
+
+    .brand-logo-img {
+        height: 26px;
+        /* Slightly smaller on mobile */
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
     }
 
     /* Mobile Menu Button */
