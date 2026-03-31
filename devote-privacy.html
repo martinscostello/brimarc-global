@@ -64,6 +64,18 @@
             align-items: center;
             gap: 10px;
         }
+
+        .permission-highlight {
+            background: rgba(0, 255, 255, 0.05);
+            border-left: 3px solid var(--brand-cyan);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+
+        .permission-highlight strong {
+            color: white;
+        }
     </style>
 </head>
 
@@ -121,155 +133,86 @@
                 <h1>Privacy <span class="text-gradient">Policy</span></h1>
 
                 <p style="text-align: center;">Last Updated: March 2026</p>
-                <p>Devote respects your privacy and is committed to protecting your personal data.</p>
-
-                <hr class="policy-divider">
-
-                <h2>1. Overview</h2>
                 <p>Devote respects your privacy and is committed to protecting your personal data. This policy explains how we collect, use, and safeguard your information when you use our App.</p>
 
                 <hr class="policy-divider">
 
-                <h2>2. Information We Collect</h2>
+                <h2>1. Information We Collect</h2>
                 
                 <div class="privacy-item">
                     <h3>🔹 Personal Information</h3>
-                    <ul>
-                        <li>Name</li>
-                        <li>Email</li>
-                        <li>Account details</li>
-                    </ul>
+                    <p>Name, Email, and Account details.</p>
                 </div>
 
                 <div class="privacy-item">
                     <h3>🔹 Usage Data</h3>
-                    <ul>
-                        <li>App interactions</li>
-                        <li>Features used</li>
-                        <li>Session data</li>
-                    </ul>
+                    <p>App interactions, features used, and session data.</p>
                 </div>
 
                 <div class="privacy-item">
-                    <h3>🔹 Device Information</h3>
-                    <ul>
-                        <li>Device type</li>
-                        <li>OS version</li>
-                        <li>Unique identifiers</li>
-                    </ul>
+                    <h3>🔹 Device Information & Hardware Permissions</h3>
+                    <p>To provide full functionality, the App requires access to certain device features:</p>
+                    
+                    <div class="permission-highlight">
+                        <p><strong>📸 Camera Access (android.permission.CAMERA):</strong> Required for scanning QR codes to join Sanctuary rooms and for taking profile identification photos. The camera is only active when you trigger these specific features.</p>
+                        <p><strong>🎤 Microphone Access (android.permission.RECORD_AUDIO):</strong> Used for interactive spiritual features and audio-based devotions.</p>
+                        <p><strong>🔔 Notifications:</strong> Used for prayer reminders, community updates, and teaching alerts.</p>
+                    </div>
                 </div>
 
                 <div class="privacy-item">
                     <h3>🔹 Optional Data</h3>
-                    <ul>
-                        <li>Prayer activity</li>
-                        <li>Journal entries (if used)</li>
-                    </ul>
+                    <p>Prayer activity and Journal entries (if used).</p>
                 </div>
 
                 <hr class="policy-divider">
 
-                <h2>3. How We Use Your Information</h2>
+                <h2>2. How We Use Your Information</h2>
                 <p>We use data to:</p>
                 <ul>
-                    <li>Provide and improve the App</li>
-                    <li>Personalize spiritual content</li>
-                    <li>Send notifications (if enabled)</li>
-                    <li>Maintain security</li>
+                    <li>Provide and improve the App's spiritual features.</li>
+                    <li>Personalize content and maintain high-fidelity security.</li>
+                    <li>Send notifications (if enabled).</li>
                 </ul>
 
                 <hr class="policy-divider">
 
-                <h2>4. Notifications</h2>
-                <p>We may send:</p>
+                <h2>3. Data Storage & Security</h2>
+                <p>Your data is stored on secure cloud servers with industry-standard encryption and access controls. While we implement rigorous safeguards to protect your data, no system is 100% secure.</p>
+
+                <hr class="policy-divider">
+
+                <h2>4. Data Sharing</h2>
+                <p>We do <strong>NOT</strong> sell your data. We may share data only with:</p>
                 <ul>
-                    <li>Prayer reminders</li>
-                    <li>Community updates</li>
-                    <li>Teaching alerts</li>
-                </ul>
-                <p>You can disable notifications anytime.</p>
-
-                <hr class="policy-divider">
-
-                <h2>5. Data Storage</h2>
-                <p>Your data may be stored on:</p>
-                <ul>
-                    <li>Secure cloud servers</li>
-                    <li>Third-party infrastructure</li>
-                </ul>
-                <p>We implement safeguards to protect your data.</p>
-
-                <hr class="policy-divider">
-
-                <h2>6. Data Sharing</h2>
-                <p>We do NOT sell your data.</p>
-                <p>We may share data with:</p>
-                <ul>
-                    <li>Service providers (hosting, analytics)</li>
-                    <li>Payment processors</li>
-                    <li>Legal authorities (if required)</li>
+                    <li>Service providers (hosting, analytics platforms like Firebase).</li>
+                    <li>Legal authorities (only if strictly required by law).</li>
                 </ul>
 
                 <hr class="policy-divider">
 
-                <h2>7. Third-Party Services</h2>
-                <p>We may use:</p>
-                <ul>
-                    <li>Firebase (analytics, messaging)</li>
-                    <li>Payment providers (future use)</li>
-                </ul>
-                <p>These services have their own privacy policies.</p>
-
-                <hr class="policy-divider">
-
-                <h2>8. Data Retention</h2>
-                <p>We retain data:</p>
-                <ul>
-                    <li>As long as your account is active</li>
-                    <li>As needed for legal obligations</li>
-                </ul>
-
-                <hr class="policy-divider">
-
-                <h2>9. Your Rights</h2>
+                <h2>5. Your Rights</h2>
                 <p>Depending on your location, you may:</p>
                 <ul>
-                    <li>Access your data</li>
-                    <li>Request correction</li>
-                    <li>Request deletion</li>
-                    <li>Withdraw consent</li>
+                    <li>Access, correct, or request deletion of your personal data.</li>
+                    <li>Withdraw consent for hardware permissions (Camera/Microphone) at any time via your device settings.</li>
                 </ul>
 
                 <hr class="policy-divider">
 
-                <h2>10. Children’s Privacy</h2>
+                <h2>6. Children’s Privacy</h2>
                 <p>Devote is not intended for children under 13. We do not knowingly collect data from children.</p>
 
                 <hr class="policy-divider">
 
-                <h2>11. Security</h2>
-                <p>We implement:</p>
-                <ul>
-                    <li>Encryption</li>
-                    <li>Secure authentication</li>
-                    <li>Access controls</li>
-                </ul>
-                <p>However, no system is 100% secure.</p>
+                <h2>7. Changes to This Policy</h2>
+                <p>We may update this policy periodically to reflect changes in our services or legal requirements.</p>
 
                 <hr class="policy-divider">
 
-                <h2>12. International Users</h2>
-                <p>Your data may be processed outside your country.</p>
-
-                <hr class="policy-divider">
-
-                <h2>13. Changes to Privacy Policy</h2>
-                <p>We may update this policy.</p>
-
-                <hr class="policy-divider">
-
-                <h2>14. Contact</h2>
-                <p>For questions: <a href="mailto:support@brimarcglobal.com" style="color: var(--brand-cyan);">Support@brimarcglobal.com</a></p>
+                <h2>8. Contact Us</h2>
+                <p>For questions or data requests, please contact us at: <br>
+                <a href="mailto:Support@brimarcglobal.com" style="color: var(--brand-cyan);">Support@brimarcglobal.com</a></p>
             </div>
         </section>
     </main>
