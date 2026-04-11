@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion Request | Devote</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
+<style>
+        .legal-container {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .legal-content p {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .deletion-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: white;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px;
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--brand-cyan);
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+
+        .deletion-warning {
+            background: rgba(255, 69, 58, 0.1);
+            border: 1px solid rgba(255, 69, 58, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            color: #ff9f9a;
+            font-size: 0.95rem;
+        }
+
+        .deletion-warning strong {
+            color: #ff453a;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/logo.png" alt="Brimarc Global Logo" class="brand-logo-img">
+                <span class="logo-text">Brimarc <span class="text-gradient">Global</span></span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+            </nav>
+
+            <div class="account-wrapper">
+                <a href="devote.html" class="account-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    <span class="btn-label">Back to Product</span>
+                </a>
+            </div>
+            
+        </div>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        <div class="mobile-nav-overlay">
+            <nav class="mobile-nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="products.html">Products</a>
+                <a href="academy.html">Academy</a>
+                <a href="about.html">About</a>
+                <hr class="mobile-divider">
+                <a href="login.html">Login</a>
+                <a href="signup.html" class="btn-primary">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container legal-container">
+            <div class="legal-content">
+                <h1>Data <span class="text-gradient">Deletion</span></h1>
+                <p>We respect your right to privacy. Use the form below to request the permanent deletion of your Devote account and all associated personal data.</p>
+
+                <div class="deletion-card">
+                    <div class="deletion-warning">
+                        <strong>⚠️ Important Information</strong>
+                        Once processed, this action is permanent. You will lose access to your prayer journal, community circles, and all spiritual content associated with your account.
+                    </div>
+
+                    <form action="mailto:support@brimarcglobal.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="name" class="form-input" placeholder="Your account name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" class="form-input" placeholder="The email tied to your account" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Reason for Deletion (Optional)</label>
+                            <textarea name="reason" class="form-textarea" placeholder="Tell us how we can improve..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary submit-btn">Request Deletion</button>
+                    </form>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px; color: var(--text-muted); font-size: 0.9rem;">
+                    Requests are typically processed within 48-72 hours. <br>
+                    Questions? Contact <a href="mailto:support@brimarcglobal.com" style="color: var(--brand-cyan);">support@brimarcglobal.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding-bottom: 40px;">
+            <p>&copy; 2026 Brimarc Global. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
